@@ -25,29 +25,29 @@ public class QuickSortSample {
 	}
 	
 	public static void qsort(int[] array, int leftIndex, int rightIndex) {
-        int l = leftIndex;
-        int r = rightIndex;
-        int pivot = array[(leftIndex + rightIndex) >> 1];
-        while (l <= r) {
-            while (array[l] < pivot) {
-                l++;
-            }
-            while (array[r] > pivot) {
-                r--;
-            }
-            if (l <= r) {
-                int temp = array[l];
-                array[l] = array[r];
-                array[r] = temp;
-                l++;
-                r--;
-            }
-        }
-        if (leftIndex < r){
-            qsort(array, leftIndex, r);
-        }
-        if(l < rightIndex){
-            qsort(array, l, rightIndex);
-        }
-    }
+	    int l = leftIndex;
+	    int r = rightIndex;
+	    int pivot = array[(leftIndex + rightIndex) >> 1];
+	    while (l <= r) {
+	        while (array[l] < pivot) {
+	            l++;
+	        }
+	        while (array[r] > pivot) {
+	            r--;
+	        }
+	        if (l <= r) {
+	            int temp = array[l];
+	            array[l] = array[r];
+	            array[r] = temp;
+	            l++;
+	            r--;
+	        }
+	    }
+	    if (leftIndex < r){
+	        qsort(array, leftIndex, r);
+	    }
+	    if(l < rightIndex){
+	        qsort(array, l, rightIndex);
+	    }
+	}
 }
