@@ -12,34 +12,41 @@ public class Main {
     }
 
     public static int[] sort(int[] array) {
-        qsort(array, 0, array.length - 1);
+        quickSort(array, 0, array.length - 1);
         return array;
     }
 
-    public static void qsort(int[] array, int leftIndex, int rightIndex) {
-        int l = leftIndex;
-        int r = rightIndex;
-        int pivot = array[(leftIndex + rightIndex) >> 1];
-        while (l <= r) {
-            while (array[l] < pivot) {
-                l++;
-            }
-            while (array[r] > pivot) {
-                r--;
-            }
-            if (l <= r) {
-                int temp = array[l];
-                array[l] = array[r];
-                array[r] = temp;
-                l++;
-                r--;
+    private static void quickSort(int[] array, int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = partition(array, begin, end);
+
+            // Separately sort elements before and after partition element
+            quickSort(array, begin, partitionIndex - 1);
+            quickSort(array, partitionIndex + 1, end);
+        }
+    }
+
+    private static int partition(int[] array, int begin, int end) {
+        int pivot = array[end];
+        int smallestElementIndex = begin - 1;
+
+        for (int currentElementIndex = begin; currentElementIndex < end; currentElementIndex++) {
+            if (array[currentElementIndex] <= pivot) {
+                smallestElementIndex++;
+
+                swapElementsInArray(array, smallestElementIndex, currentElementIndex);
             }
         }
-        if (leftIndex < r){
-            qsort(array, leftIndex, r);
-        }
-        if(l < rightIndex){
-            qsort(array, l, rightIndex);
-        }
+
+        int partitionIndex = smallestElementIndex + 1;
+        swapElementsInArray(array, partitionIndex, end);
+
+        return partitionIndex;
+    }
+
+    private static void swapElementsInArray(int[] array, int l, int r) {
+        int temp = array[l];
+        array[l] = array[r];
+        array[r] = temp;
     }
 }
