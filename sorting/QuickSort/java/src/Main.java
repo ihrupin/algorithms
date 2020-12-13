@@ -1,5 +1,3 @@
-package com.hrupin.algorithms.sorting;
-
 import java.util.Arrays;
 
 public class Main {
