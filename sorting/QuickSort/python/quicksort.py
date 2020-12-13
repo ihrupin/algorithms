@@ -3,15 +3,13 @@ def swapElementsInArray(array, i, j):
 
 def partition(array, min, max):
     smallestElementIndex = (min-1)
-    currentElementIndex = min
     pivotIndex = max
     pivot = array[pivotIndex]
-    
-    while currentElementIndex < pivotIndex:
+
+    for currentElementIndex in range(min, pivotIndex):
         if array[currentElementIndex] <= pivot:
             smallestElementIndex +=1
             swapElementsInArray(array, smallestElementIndex, currentElementIndex)
-        currentElementIndex +=1
  
     partitionElementIndex = smallestElementIndex+1
     swapElementsInArray(array, partitionElementIndex, pivotIndex)
@@ -20,8 +18,6 @@ def partition(array, min, max):
 
 
 def quickSort(array, min, max):
-    if len(array) == 1:
-        return array
     if min < max:
         partitionElementIndex = partition(array, min, max)
  
