@@ -37,7 +37,7 @@ def getItemWithSmallestValue(dictionaty):
     return [smallestKey, smallest]
 
 
-def getShortestDistances(fromVertex, graph):
+def dijkstra(fromVertex, graph):
     shortestDistanceResult = {}
     resolvedVertexDict = {}
 
