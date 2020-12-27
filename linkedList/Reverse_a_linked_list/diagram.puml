@@ -1,0 +1,20 @@
+@startuml
+
+start
+
+    repeat
+
+        if ("Is Head Node?") then (yes)
+            :Set next node as NULL;
+        else (no)
+            :Set next node as previous;
+        endif
+        :Save current node in previous field;
+
+    repeat while (Next node is NULL) is (no)
+
+    :Save current node in previous field;
+
+stop
+
+@enduml
