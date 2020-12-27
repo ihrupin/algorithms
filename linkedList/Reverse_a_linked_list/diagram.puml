@@ -13,7 +13,7 @@ start
 
     repeat while (Next node is NULL) is (no)
 
-    :Save current node in previous field;
+     :Save the previous field as head;
 
 stop
 
