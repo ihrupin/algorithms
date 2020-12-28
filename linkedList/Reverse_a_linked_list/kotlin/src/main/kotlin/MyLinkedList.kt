@@ -6,7 +6,7 @@ class MyLinkedList<T> {
     fun reverse() {
         var previous: Node<T>? = null
         var current = head
-        
+
         while (current != null) {
             val next = current.next
             current.next = previous
