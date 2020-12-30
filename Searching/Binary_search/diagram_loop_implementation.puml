@@ -1,0 +1,46 @@
+@startuml
+
+skinparam padding 10
+
+start
+
+    repeat
+
+        :Found element between start and finish index. Middle element;
+
+        if ("Middle element 
+equals to 
+needed element?") then (yes)
+            :Search finished;
+            :Return middle element index;
+            stop
+        elseif ("Start element 
+equals to 
+needed element?") then (yes)
+            :Search finished;
+            :Return start element index;
+            stop
+        elseif ("Finish element 
+equals to 
+needed element?") then (yes)
+            :Search finished;
+            :Return finish element index;
+            stop
+        elseif ("Middle element 
+bigger than 
+needed element?") then (yes)
+            :Finish index = Middle index - 1;
+        elseif ("Middle element 
+less than 
+needed element?") then (yes)
+            :Start index = Middle index + 1;
+        endif
+
+    repeat while (startIndex less than finishIndex) is (no)
+
+    :Search finished;
+    :Return no item found result;
+
+stop
+
+@enduml
