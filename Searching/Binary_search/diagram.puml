@@ -4,7 +4,7 @@ start
 
     repeat
 
-        :Search element 
+        :Search element;
         :Found element between start and finish index. Middle element;
 
         if ("MiddleItem == sought?") then (yes)
