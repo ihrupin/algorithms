@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+while (End of array?) is (no)
+    :Save Active Index;
+    while (Previous element bigger than next element?) is (yes)
+        :Swap elements;
+    endwhile (no)
+endwhile (yes)
+:Finish. Array Sorted;
+
+stop
+
+@enduml
