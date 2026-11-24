@@ -1,0 +1,18 @@
+@startuml
+
+start
+
+while (End of array not reached and swap happened last pass?) is (yes)
+    :Set swapped = false;
+    while (End of unsorted part not reached?) is (no)
+        if (Current element bigger than next element?) then (yes)
+            :Swap elements;
+            :Set swapped = true;
+        endif
+    endwhile (yes)
+endwhile (no)
+:Finish. Array Sorted;
+
+stop
+
+@enduml
